@@ -6,7 +6,8 @@ const goalsRoutes = require("./routes/goals");
 const app = express();
 
 app.use(cors({
-  origin: '*'
+  origin: '*',
+  allowedHeaders: ['authorization', 'Content-type']
 }));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());

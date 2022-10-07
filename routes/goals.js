@@ -25,7 +25,7 @@ router.post('/create-goal', auth.authToken, (req, res, next) => {
 });
 
 router.get('/career-list', auth.authToken, (req, res, next) => {
-  let sqlQuery = "SELECT * FROM career_goals ORDER BY target_date";
+  let sqlQuery = "SELECT * FROM career_goals ORDER BY id DESC";
   conn.query(sqlQuery, (error, result) => {
     if(!error) {
       return res.status(200).json(result);
